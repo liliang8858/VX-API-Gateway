@@ -1,10 +1,13 @@
+# 2.0升级说明
+VX-API已经在本人公司运行了236天(2018-11-23),核心处理器处理了9000多万次,网关对于我们这种访问量不大的公司来说基本不是问题,但是VX-API当前1.0版本性能还有很大的控件没有压榨出来,部分设计也不是很人性化,所以本人已经在安排时间做2.0版,2.0版性能将大大提升,也会更人性化,推荐大家先加入群里或者关注该项目后等2.0版再使用,2.0版不打算兼容1.0版,但是会出工具将1.0的接口迁移到2.0
+
 # VX-API-Gateway
 ![logo](https://raw.githubusercontent.com/shenzhenMirren/MyGithubResources/master/image/VX-API-Gateway-Logo_small.png)<br/>
 VX-API-Gateway是基于Vert.x(java)开发的API网关,是一个分布式,全异步,高性能,可扩展 ,轻量级的API网关<br/>
 VX-API-Gateway的部分流程与页面设计灵感来自阿里云的API网关<br/>
 QQ交流群 : 440306757<br/>
 ### 软件使用说明
-[VX-API-Gateway使用帮助文档](http://duhua.gitee.io/vx-api-gateway-doc/)<br/>
+[VX-API-Gateway使用帮助文档](http://mirren.gitee.io/vx-api-gateway-doc/)<br/>
 # VX-API 执行流程
 ![flowchart](https://raw.githubusercontent.com/shenzhenMirren/MyGithubResources/master/image/VX-API-Gateway-flowchart.png)
 <br>
@@ -66,15 +69,15 @@ src/main/java中core包存放核心代码,spi包存放用户可以自定义插�
 ## 性能测试
  后台服务输出hello<br/>
 Nginx Stable1.12.0 配置<br/>
-![nginx-conf](http://duhua.gitee.io/vx-api-gateway-doc/image/other/nginx-conf.png)
+![nginx-conf](http://mirren.gitee.io/vx-api-gateway-doc/image/other/nginx-conf.png)
 <br>
 阿里云 centos 7 1G内存1核1兆带宽环境 ab -n 1000 -c 1000 执行结果<br/>
 Nginx:ab结果<br/>
-![nginx-linux-ab](http://duhua.gitee.io/vx-api-gateway-doc/image/other/linux-1c1n1gnqcq-nginx.png)<br>
+![nginx-linux-ab](http://mirren.gitee.io/vx-api-gateway-doc/image/other/linux-1c1n1gnqcq-nginx.png)<br>
 VX-API: JVM -Xms512m -Xmx512m 其他默认 ab结果<br>
-![VX-API-linux-ab](http://duhua.gitee.io/vx-api-gateway-doc/image/other/linux-1c1n1gnqcq-vx-xsm-512m.png)<br>
+![VX-API-linux-ab](http://mirren.gitee.io/vx-api-gateway-doc/image/other/linux-1c1n1gnqcq-vx-xsm-512m.png)<br>
 Windows 10 8核8G内存 环境 ab -n 100000 -c 2000 执行结果<br>
 Nginx:ab结果<br>
-![nginx-win-ab](http://duhua.gitee.io/vx-api-gateway-doc/image/other/win-8g8cn10wc2q-nginx.png)<br>
+![nginx-win-ab](http://mirren.gitee.io/vx-api-gateway-doc/image/other/win-8g8cn10wc2q-nginx.png)<br>
 VX-API: JVM -Xms2G -Xmx2G 其他默认 ab结果<br/>
-![VX-API-win-ab](http://duhua.gitee.io/vx-api-gateway-doc/image/other/win-8g8cn10wc2q-vx-xsm-2g.png)<br>
+![VX-API-win-ab](http://mirren.gitee.io/vx-api-gateway-doc/image/other/win-8g8cn10wc2q-vx-xsm-2g.png)<br>
